@@ -65,3 +65,16 @@ We would like to thank the authors of [Sample4Geo](https://github.com/Skyy93/Sam
   year={2023}
 }
 ```
+
+## Reproduction (RTX 4060 Laptop)
+
+  This repository includes a reproduction adapted for single-GPU RTX 4060 Laptop (8 GB, Windows 11). Key changes:
+
+  - Updated to **PyTorch 2.x** (torch.amp migration)
+  - **grad_checkpointing** enabled — saves 30–40% VRAM
+  - **num_workers=4** — CPU utilization 50% → 100%
+  - Custom training script: `train_cvusa_ours.py`
+
+  Results at FOV=90° + arbitrary orientations: R@1 37.13%, R@top1 92.08%
+
+  See full report: **[REPRODUCTION.md](REPRODUCTION.md)** | **[复现记录 (中文)](REPRODUCTION.zh.md)**
